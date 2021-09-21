@@ -3,6 +3,7 @@ import ExpenseFilter from "../Filters/ExpenseFilter"
 import Card from "../UI/Card";
 import "./ExpensesBoard.css";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 function ExpensesBoard(props) {
   //Filter Component State Management
@@ -17,7 +18,7 @@ console.log(filterdArr);
     <Card className="expenses">
       {/*Filter Component*/}
       <ExpenseFilter selected={selectedOption} onGettingData={gettingData}/>
-
+      <ExpensesChart expenses={filterdArr} />
       {/*filtered Mapped*/}
       <ExpensesList data={filterdArr}/>
     </Card>
